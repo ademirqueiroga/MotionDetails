@@ -11,8 +11,8 @@
         <OnSwipe
             motion:dragDirection="dragUp"
             motion:onTouchUp="stop"
-            motion:touchAnchorId="@+id/descriptionContainer"
-            motion:touchAnchorSide="top" />
+            motion:touchAnchorId="@+id/playerContainer"
+            motion:touchAnchorSide="bottom" />
 
     </Transition>
 
