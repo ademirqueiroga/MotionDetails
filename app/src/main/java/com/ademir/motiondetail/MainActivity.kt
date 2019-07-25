@@ -8,12 +8,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activtiy_2)
+        setContentView(R.layout.activity_3)
 
         recyclerView.adapter = ItemAdapter().apply {
             setData(Array(LIST_SIZE) { Item() }.toList())
         }
-        
+
     }
 
     companion object {
