@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = ItemAdapter().apply {
             setData(Array(LIST_SIZE) { Item() }.toList())
         }
-
+        nestedScrollView.isNestedScrollingEnabled = false
     }
 
     companion object {
