@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/baseToCollapsedImage"
+        motion:constraintSetEnd="@+id/collapsedImage"
+        motion:constraintSetStart="@+id/base"
+        motion:duration="500">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:onTouchUp="stop"
+            motion:touchAnchorId="@+id/description"
+            motion:touchAnchorSide="top" />
+
+    </Transition>
+
+    <Transition
+        android:id="@+id/collapsedVideoToCollapsedDescription"
+        motion:constraintSetEnd="@+id/collapsedDescription"
+        motion:constraintSetStart="@+id/collapsedImage"
+        motion:duration="500">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:onTouchUp="stop"
+            motion:touchAnchorId="@+id/description"
+            motion:touchAnchorSide="bottom" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/base">
+
+        <Constraint android:id="@+id/playerContainer">
+            <Layout
+                android:layout_height="500dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@+id/description">
+            <Layout
+                android:layout_height="100dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/playerContainer" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsedImage">
+
+        <Constraint android:id="@+id/playerContainer">
+            <Layout
+                android:layout_height="200dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@+id/description">
+            <Layout
+                android:layout_height="100dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/playerContainer" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsedDescription">
+
+        <Constraint android:id="@+id/playerContainer">
+            <Layout
+                android:layout_height="200dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@+id/description">
+            <Layout
+                android:layout_height="0dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@id/playerContainer" />
+        </Constraint>
+
+    </ConstraintSet>
+
+</MotionScene>
