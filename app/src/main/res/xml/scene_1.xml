@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/transition"
+        motion:constraintSetEnd="@+id/collapsedVideo"
+        motion:constraintSetStart="@+id/base"
+        motion:duration="500">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:onTouchUp="stop"
+            motion:moveWhenScrollAtTop="true"
+            motion:touchRegionId="@+id/nestedScrollView"
+            motion:touchAnchorId="@+id/playerContainer"
+            motion:touchAnchorSide="bottom" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/base">
+
+        <Constraint
+            android:id="@+id/playerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="@color/colorAccent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsedVideo">
+
+        <Constraint
+            android:id="@+id/playerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorAccent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+    </ConstraintSet>
+
+</MotionScene>
